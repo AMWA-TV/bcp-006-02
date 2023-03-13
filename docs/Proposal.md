@@ -11,9 +11,11 @@ _(c) AMWA 2023, CC Attribution-NoDerivatives 4.0 International (CC BY-ND 4.0)_
 
 H.264 is a technology standardized in Rec. [ITU-T H.264][H.264] | ISO/IEC 14496 for video contribution at high compression rate and video quality.
 A companion RTP payload format specification was developed through the IETF Payloads working group, IETF [RFC 6184][RFC-6184].
+The [ITU H.222][H.222] specification and associated amendments describe the embedding of an H.264 stream in an MPEG2-TS transport stream for RTP or other transport protocols.
 
 - [ ] H.265 is a technology standardized in Rec. [ITU-T H.265][H.265] | ISO/IEC 23008 for video contribution at high compression rate and video quality.
 A companion RTP payload format specification was developed through the IETF Payloads working group, IETF [RFC 7798][RFC-7798].
+The [ITU H.222][H.222] specification and associated amendments describe the embedding of an H.265 stream in an MPEG2-TS transport stream for RTP or other transport protocols.
 
 The [Video Services Forum][VSF] developed Technical Recommendation [TR-??][] and [TR-??][] of the IPMX suite of protocols, which cover the end-to-end application use of constant and variable bitrate compression for video, using the SMPTE ST 2110 and IPMX suite of protocols.
 TR-?? and TR-?? mandate the use of the AMWA [IS-04][] and [IS-05][] NMOS Specifications in IPMX compliant systems.
