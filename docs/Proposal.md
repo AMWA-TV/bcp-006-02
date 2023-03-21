@@ -215,8 +215,6 @@ Additionally, the SDP file needs to convey, so far as the defined parameters all
 
 Therefore:
 
-2 hours reserved on Ely Monday to start on possible hack-fest:
-
 - The `profile-level-id` format-specific parameters MUST be included with the correct value unless it corresponds to the default value.
 - The `packetization-mode` format-specific parameters MUST be included with the correct value unless it corresponds to the default value.
 - The `sprop-interleaving-depth`, `sprop-deint-buf-req`, `sprop-init-buf-time` and `sprop-max-don-diff` format-specific parameters SHOULD be included with the correct value unless it corresponds to the default value if the `packetization-mode` equals one of the interleaved modes.
