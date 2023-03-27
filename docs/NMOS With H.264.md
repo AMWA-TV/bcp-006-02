@@ -27,7 +27,7 @@ _(c) AMWA 2023, CC Attribution-NoDerivatives 4.0 International (CC BY-ND 4.0)_
 
 ## Introduction
 
-H.264 is a technology standardized in Rec. [ITU-T H.264][H.264] | ISO/IEC 14496 for video contribution at high compression rate and video quality.
+H.264 is a technology standardized in Rec. [ITU-T H.264][H.264] | ISO/IEC 14496-10 for video contribution at high compression rate and video quality.
 A companion RTP payload format specification was developed through the IETF Payloads working group, IETF [RFC 6184][RFC-6184] for the transport of an H.264 bitstream over RTP. 
 
 The BCP-006-02 specification includes support for H.264 bitstreams that are compliant with the clauses of the main document and annexes A, B, C, D and E of the Rec. [ITU-T H.264][H.264] specification. It excludes support for bitstreams that are compliant with other annexes of the specification.
