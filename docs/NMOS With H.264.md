@@ -35,10 +35,10 @@ The BCP-006-02 specification includes support for H.264 bitstreams that are comp
 
 The [ITU H.222][H.222] specification and associated amendments describe the embedding of an H.264 stream in an MPEG2-TS transport stream. An RTP payload format specification for MPEG2-TS transport stream was developed through the IETF Payloads working group, IETF [RFC 2550][RFC-2550] for transport over RTP. Other normative documents may describe the requirements for the streaming of an MPEG2-TS transport stream over other non-RTP transports.
 
-The [Society of Media Professionals, Technologists and Engineers][SMPTE] developed Standard [ST 2110-22][ST-2110-22] of the ST 2110 suite of protocols, which cover the end-to-end application use of constant bitrate compression for video over managed IP networks.
-> Note that the definition of constant bitrate of ST 2110-22 is very strict "The video compression or the packetization of the video compression shall produce a constant number of bytes per frame. The packetization shall produce a constant number of RTP packets per frame.". This definition of constant bitrate is hereafter described as strict-CBR, using the H.264 definition of constant bitrate for CBR.
+The [Society of Media Professionals, Technologists and Engineers][SMPTE] developed Standard [ST 2110-22][ST-2110-22] of the ST 2110 suite of protocols, which cover the end-to-end application use of constant bit rate compression for video over managed IP networks.
+> Note that the definition of constant bit rate of ST 2110-22 is very strict "the video compression or the packetization of the video compression shall produce a constant number of bytes per frame. The packetization shall produce a constant number of RTP packets per frame." This definition of constant bit rate is hereafter described as strict-CBR, using the H.264 definition of constant bit rate for CBR.
 
-The [Video Services Forum][VSF] developed Technical Recommendation [TR-10-11][TR-10-11] and [TR-10-??][TR-10-??] of the IPMX suite of protocols, which cover the end-to-end application use of constant and variable bitrate compression for video, using the SMPTE ST 2110 and IPMX suite of protocols.
+The [Video Services Forum][VSF] developed Technical Recommendation [TR-10-11][TR-10-11] and [TR-10-??][TR-10-??] of the IPMX suite of protocols, which cover the end-to-end application use of constant and variable bit rate compression for video, using the SMPTE ST 2110 and IPMX suite of protocols.
 
 TR-10-11 and TR-10-?? mandate the use of the AMWA [IS-04][IS-04] and [IS-05][IS-05] NMOS Specifications in IPMX compliant systems.
 
@@ -79,12 +79,12 @@ In addition to those attributes defined in IS-04 for all coded video Flows, the 
 These attributes provide information for Controllers and Users to evaluate stream compatibility between Senders and Receivers.
 
 - [Components](https://specs.amwa.tv/nmos-parameter-registers/branches/main/flow-attributes/#components)
-  The Flow resource MUST indicate the color (sub-)sampling, width, height and depth of the associated uncompressed picture using the `components` attribute. The `components` array values MUST correspond to the stream's active parameter sets values. A Flow MUST track the stream's current active parameter sets.
+  The Flow resource MUST indicate the color (sub-)sampling, width, height and depth of the associated uncompressed picture using the `components` attribute. The `components` array values MUST correspond to the stream's active parameter sets. A Flow MUST track the stream's current active parameter sets.
 
 Informative note: ST 2110-22 does not require the `sampling` or `depth` SDP parameters. RFC 6184 does not define any such SDP parameters. The `sampling` and `depth` of the associated uncompressed picture could be derived from the H.264 active parameter sets by a Receiver.
 
 - [Profile](https://specs.amwa.tv/nmos-parameter-registers/branches/main/flow-attributes/#profile)
-  The Flow resource MUST indicate the H.264 profile, which defines algorithmic features and limits that SHALL be supported by all decoders conforming to that profile. It SHALL comply with the stream's active parameter sets. The permitted `profile` values are strings, defined as per ITU-T  Rec. H.264 Annex A
+  The Flow resource MUST indicate the H.264 profile, which defines algorithmic features and limits that MUST be supported by all decoders conforming to that profile. It MUST comply with the stream's active parameter sets. The permitted `profile` values are strings, defined as per ITU-T  Rec. H.264 Annex A
 
   - "BaselineConstrained"
   - "Baseline" (Default if not specified in the SDP transport file)
@@ -104,10 +104,10 @@ Informative note: ST 2110-22 does not require the `sampling` or `depth` SDP para
 
 Informative note: The names of the profiles in string form have been derived from the names used at Annex A of the H.264 standard with whitespace omitted, the sampling mode always positioned at the end of the string, preceded by a '-' and the terms High and Baseline positioned at the beginning of the string.
 
-The [NMOS Parameter Registers] is the official reference for the profiles strings. In the case of discrepancies between this specification and the [NMOS Parameter Registers], the registers have precedence.
+The profile strings in this specification are included in the [NMOS Parameter Registers][]. Additional strings may be added there in the future.
 
 - [Level](https://specs.amwa.tv/nmos-parameter-registers/branches/main/flow-attributes/#level)
-  The Flow resource MUST indicate the H.264 level, which defines a set of limits on the values that may be taken by the syntax elements of an H.264 bitstream. It SHALL comply with the stream's active parameter sets. The permitted `level` values are strings, defined as per ITU-T Rec. H.264 Annex A
+  The Flow resource MUST indicate the H.264 level, which defines a set of limits on the values that may be taken by the syntax elements of an H.264 bitstream. It MUST comply with the stream's active parameter sets. The permitted `level` values are strings, defined as per ITU-T Rec. H.264 Annex A
 
   - "1" (Default if not specified in the SDP transport file)
   - "1b", "1.1", "1.2", "1.3"
@@ -119,25 +119,25 @@ The [NMOS Parameter Registers] is the official reference for the profiles string
 
 Informative note: The names of the levels in string form have been derived from the names used at Annex A of the H.264 standard.
 
-The [NMOS Parameter Registers] is the official reference for the levels strings. In the case of discrepancies between this specification and the [NMOS Parameter Registers], the registers have precedence.
+The level strings in this specification are included in the [NMOS Parameter Registers][]. Additional strings may be added there in the future.
 
 The Flow's `profile` and `level` attributes map to the `profile-level-id` parameter of the SDP transport file. See section SDP format-specific parameters.
 
-The Flow's `profile` and `level` attributes map to the members profile_idc, level_idc and constraint_set?_flag of the AVC_video_descriptor of an MPEG2-TS transport stream. See section Multiplexed Flows.
+The Flow's `profile` and `level` attributes map to the members profile_idc, level_idc and constraint_set<0, 1, 2, 3, 4, 5>_flag of the AVC_video_descriptor of an MPEG2-TS transport stream. See section Multiplexed Flows.
 
 Informative note: The Flow's `profile` and `level` attributes are always required. The SDP transport file `profile-level-id` parameter MAY be omitted when matching the default value.
 
 - [Bit Rate](https://specs.amwa.tv/nmos-parameter-registers/branches/main/flow-attributes/#bit-rate)
-  The Flow resource MUST indicate the target encoding bit rate (kilobits/second) of the H.264 bitstream. It SHALL comply with the stream's active parameter sets. The `bit_rate` integer value is expressed in units of 1000 bits per second, rounding up.
+  The Flow resource MUST indicate the target encoding bit rate (kilobits/second) of the H.264 bitstream. It MUST comply with the stream's active parameter sets. The `bit_rate` integer value is expressed in units of 1000 bits per second, rounding up.
 
-  Informative note: The H.264 bitstream is not required to transport HRD parameters such that an H.264 decoder may not know the actual target bitrate of a stream. There are bit rate limits imposed by the level of the coded bitstream. IS-11 may be used to constraint the Sender to a target bit rate compatible with the Receiver Capabilities.
+  Informative note: The H.264 bitstream is not required to transport hypothetical reference decoder (HRD) parameters such that an H.264 decoder may not know the actual target bit rate of a stream. There are bit rate limits imposed by the level of the coded bitstream. IS-11 may be used to constraint the Sender to a target bit rate compatible with the Receiver Capabilities.
 
  - [Constant Bit Rate](https://specs.amwa.tv/nmos-parameter-registers/branches/main/flow-attributes/#constant-bit-rate)
-  The Flow resource MUST indicate if it operates in constant bit rate (CBR) mode or variable bit rate mode (VBR or other). When operating in constant bit rate mode the `bit_rate` corresponds to the constant encoding bit rate. Otherwise it corresponds to the maximum encoding bit rate. Since the default value of this attribute is `false`, a Flow MAY omit this attribute when using a variable bitrate mode.
+  The Flow resource MUST indicate if it operates in constant bit rate (CBR) mode or variable bit rate mode (VBR or other). When operating in constant bit rate mode the `bit_rate` corresponds to the constant encoding bit rate. Otherwise it corresponds to the maximum encoding bit rate. Since the default value of this attribute is `false`, a Flow MAY omit this attribute when using a variable bit rate mode.
 
 Informative note: The maximum bit rate information relates to the codec profile / level limits and the HRD buffering model. The CBR versus VBR mode of operation of the encoder provide essential clues about the coded bitstream produced.
 
-Informative note: For Flows compliant with ST 2110-22, the constant bit rate mode is more appropriately described as a strict-CBR mode where "The video compression or the packetization of the video compression shall produce a constant number of bytes per frame. The packetization shall produce a constant number of RTP packets per frame.". For other Flows, not compliant with ST 2110-22, it is the constant bit rate definition of of the H.264 specification that prevail.
+Informative note: For streams compliant with ST 2110-22, the constant bit rate mode is more appropriately described as a strict-CBR mode where "the video compression or the packetization of the video compression shall produce a constant number of bytes per frame. The packetization shall produce a constant number of RTP packets per frame." For other streams, not compliant with ST 2110-22, it is the constant bit rate definition of the H.264 specification that prevails.
 
 Examples Flow resources are provided in [Examples](../examples/).
 
@@ -149,7 +149,7 @@ This section applies to a Sender with RTP transport directly associated to an H.
 
 Informative note: When an H.264 Flow is not directly associated with a Sender but with another Flow through the Flow's parents attribute, it does not have to provide format-specific attributes in the form of an SDP transport file. A Sender has such requirement only for the Flow directly associated with it.
 
-The SDP file at the `manifest_href` MUST comply with the requirements of RFC 6184 in the [Usage in Declarative Session Descriptions](https://datatracker.ietf.org/doc/html/rfc6184#section-8.2.3) mode of operation. The SDP Offer/Answer Model described in RFC 6184 is not supported. The `fmtp` source attribute as specified in Section 6.3 of RFC 5576 (Source-Specific Media Attributes in the Session Description Protocol) is not supported.
+The SDP file at the `manifest_href` MUST comply with the requirements of RFC 6184 in the [Usage in Declarative Session Descriptions](https://datatracker.ietf.org/doc/html/rfc6184#section-8.2.3) mode of operation. The SDP Offer/Answer Model described in RFC 6184 is not supported. The `fmtp` source attribute as specified in Section 6.3 of [RFC 5576][RFC-5576] is not supported.
 
 Additionally, the SDP transport file needs to convey, so far as the defined format-specific parameters allow, the same information about the stream as conveyed by the Source, Flow and Sender attributes defined by this specification and IS-04, unless such information is conveyed through in-band parameter sets.
 
@@ -193,6 +193,7 @@ If the Sender meets the traffic shaping and delivery timing requirements specifi
 [RFC-2119]: https://tools.ietf.org/html/rfc2119 "Key words for use in RFCs"
 [RFC-6184]: https://tools.ietf.org/html/rfc6184 "RTP Payload Format for H.264 Video"
 [RFC-2250]: https://www.rfc-editor.org/rfc/rfc2250 "RTP Payload Format for MPEG1/MPEG2 Video"
+[RFC-5576]: https://www.rfc-editor.org/rfc/rfc5576 "Source-Specific Media Attributes in the Session Description Protocol (SDP)"
 [IS-04]: https://specs.amwa.tv/is-04/ "AMWA IS-04 NMOS Discovery and Registration Specification"
 [IS-05]: https://specs.amwa.tv/is-05/ "AMWA IS-05 NMOS Device Connection Management Specification"
 [NMOS Parameter Registers]: https://specs.amwa.tv/nmos-parameter-registers/ "Common parameter values for AMWA NMOS Specifications"
