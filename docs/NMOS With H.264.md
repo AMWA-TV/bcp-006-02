@@ -27,7 +27,7 @@ _(c) AMWA 2023, CC Attribution-NoDerivatives 4.0 International (CC BY-ND 4.0)_
 
 ## Introduction
 
-H.264 is a technology standardized in Rec. [ITU-T H.264][H.264] | ISO/IEC 14496-10 for video contribution at high compression rate and video quality.
+H.264 is a technology standardized in Rec. [ITU-T H.264][H.264] | ISO/IEC 14496-10 for video compression at high video quality.
 A companion RTP payload format specification was developed through the IETF Payloads working group, IETF [RFC 6184][RFC-6184] for the transport of an H.264 bitstream over RTP. 
 
 The BCP-006-02 specification includes support for H.264 bitstreams that are compliant with the clauses of the main document and annexes A, B, C, D and E of the Rec. [ITU-T H.264][H.264] specification. It excludes support for bitstreams that are compliant with other annexes of the specification.
@@ -35,10 +35,10 @@ The BCP-006-02 specification includes support for H.264 bitstreams that are comp
 
 The Rec. [ITU-T H.222.0][H.222.0] | ISO/IEC 13818-1 specification and associated amendments describe the embedding of an H.264 stream in an MPEG2-TS transport stream. An RTP payload format specification for MPEG2-TS transport stream was developed through the IETF Payloads working group, IETF [RFC 2550][RFC-2550] for transport over RTP. Other normative documents describe the requirements for the streaming of an MPEG2-TS transport stream over other non-RTP transports.
 
-The [Society of Media Professionals, Technologists and Engineers][SMPTE] developed Standard [ST 2110-22][ST-2110-22] of the ST 2110 suite of protocols, which cover the end-to-end application use of constant bitrate compression for video over managed IP networks.
-> Note that the definition of constant bitrate of ST 2110-22 is very strict "The video compression or the packetization of the video compression shall produce a constant number of bytes per frame. The packetization shall produce a constant number of RTP packets per frame.". This definition of constant bitrate is hereafter described as strict-CBR, using the H.264 definition of constant bitrate for CBR.
+The [Society of Media Professionals, Technologists and Engineers][SMPTE] developed Standard [ST 2110-22][ST-2110-22] of the ST 2110 suite of protocols, which cover the end-to-end application use of constant bit rate compression for video over managed IP networks.
+> Note that the definition of constant bit rate of ST 2110-22 is very strict "The video compression or the packetization of the video compression shall produce a constant number of bytes per frame. The packetization shall produce a constant number of RTP packets per frame.". This definition of constant bit rate is hereafter described as strict-CBR, using the H.264 definition of constant bit rate for CBR.
 
-The [Video Services Forum][VSF] developed Technical Recommendation [TR-10-11][TR-10-11] and [TR-10-??][TR-10-??] of the IPMX suite of protocols, which cover the end-to-end application use of constant and variable bitrate compression for video, using the SMPTE ST 2110 and IPMX suite of protocols.
+The [Video Services Forum][VSF] developed Technical Recommendation [TR-10-11][TR-10-11] and [TR-10-??][TR-10-??] of the IPMX suite of protocols, which cover the end-to-end application use of constant and variable bit rate compression for video, using the SMPTE ST 2110 and IPMX suite of protocols.
 
 TR-10-11 and TR-10-?? mandate the use of the AMWA [IS-04][IS-04] and [IS-05][IS-05] NMOS Specifications in IPMX compliant systems.
 
