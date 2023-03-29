@@ -84,7 +84,7 @@ These attributes provide information for Controllers and Users to evaluate strea
 Informative note: ST 2110-22 does not require the `sampling` or `depth` SDP parameters. RFC 6184 does not define any such SDP parameters. The `sampling` and `depth` of the associated uncompressed picture could be derived from the H.264 active parameter sets by a Receiver.
 
 - [Profile](https://specs.amwa.tv/nmos-parameter-registers/branches/main/flow-attributes/#profile)
-  The Flow resource MUST indicate the H.264 profile, which defines algorithmic features and limits that MUST be supported by all decoders conforming to that profile. It MUST comply with the stream's active parameter sets. The permitted `profile` values are strings, defined as per ITU-T  Rec. H.264 Annex A
+  The Flow resource MUST indicate the H.264 profile, which defines algorithmic features and limits that MUST be supported by all decoders conforming to that profile. The stream's active parameter sets MUST be compliant with the `profile` attribute of the Flow. The permitted `profile` values are strings, defined as per ITU-T  Rec. H.264 Annex A
 
   - "BaselineConstrained"
   - "Baseline" (Default if not specified in the SDP transport file)
@@ -107,7 +107,7 @@ Informative note: The names of the profiles in string form have been derived fro
 The profile strings in this specification are included in the [NMOS Parameter Registers][]. Additional strings may be added there in the future.
 
 - [Level](https://specs.amwa.tv/nmos-parameter-registers/branches/main/flow-attributes/#level)
-  The Flow resource MUST indicate the H.264 level, which defines a set of limits on the values that may be taken by the syntax elements of an H.264 bitstream. It MUST comply with the stream's active parameter sets. The permitted `level` values are strings, defined as per ITU-T Rec. H.264 Annex A
+  The Flow resource MUST indicate the H.264 level, which defines a set of limits on the values that may be taken by the syntax elements of an H.264 bitstream. The stream's active parameter sets MUST be compliant with the `level` attribute of the Flow. The permitted `level` values are strings, defined as per ITU-T Rec. H.264 Annex A
 
   - "1" (Default if not specified in the SDP transport file)
   - "1b", "1.1", "1.2", "1.3"
@@ -123,7 +123,7 @@ The level strings in this specification are included in the [NMOS Parameter Regi
 
 The Flow's `profile` and `level` attributes map to the `profile-level-id` parameter of the SDP transport file. See section SDP format-specific parameters.
 
-The Flow's `profile` and `level` attributes map to the members profile_idc, level_idc and constraint_set<0, 1, 2, 3, 4, 5>_flag of the AVC_video_descriptor of an MPEG2-TS transport stream. See section Multiplexed Flows.
+The Flow's `profile` and `level` attributes map to the members profile_idc, level_idc and constraint_set\<N\>_flag of the AVC_video_descriptor of an MPEG2-TS transport stream. See section Multiplexed Flows.
 
 Informative note: The Flow's `profile` and `level` attributes are always required. The SDP transport file `profile-level-id` parameter MAY be omitted when matching the default value.
 
