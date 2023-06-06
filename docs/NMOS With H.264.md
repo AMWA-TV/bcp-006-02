@@ -307,7 +307,7 @@ For Receivers indicating `urn:x-nmos:format:video` for the `format` attribute, t
 
   Informative note: The out of band mechanism used to transmit parameter sets is transport specific and out of the scope of this specification.
 
-  All the parameter sets used by the bitstream MUST be compliant with the profile and level explicitly or implicitly declared using an out-of-band transport specific mechanism. The parameter sets MAY be specified in-band through the H.264 bitstream, out-of-band usign an unspecified mechanism or in-and-out-of-band using both mechanisms. See the [Parameter Sets](#parameter-sets) section for more details.
+  All the parameter sets used by the bitstream MUST be compliant with the profile and level explicitly or implicitly declared using an out-of-band transport specific mechanism. The parameter sets MAY be specified in-band through the H.264 bitstream, out-of-band using an unspecified mechanism, or in-and-out-of-band using both mechanisms. See the [Parameter Sets](#parameter-sets) section for more details.
 
   A Receiver supporting `in_and_out_of_band` MUST also support the `in_band` and `out_of_band` modes. Such Receiver SHOULD have all "in_band", "out_of_band" and "in_and_out_of_band" values enumerated in the Receiver Capabilities in order to allow Senders operating in any `parameter_sets_transport_mode`.
 
