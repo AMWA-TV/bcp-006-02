@@ -383,14 +383,6 @@ A Sender operating with `parameter_sets_flow_mode` set to `static` MAY produce a
 
 A Sender operating with `parameter_sets_flow_mode` set to `dynamic` MAY produce a coded bitstream using a number of SPS and PPS that MAY be associated with multiple Flows. The parameter sets MAY be defined in-band or out-of-band and MAY be refreshed by in-band duplicates or updated, replaced or augmented by in-band ones.
 
-## H.264 IS-11 Senders and Receivers
-
-### RTP transport
-
-### Other transports
-
-## Controllers
-
 [H.264]: https://www.itu.int/rec/T-REC-H.264 "Advanced video coding for generic audiovisual services"
 [H.222.0]: https://www.itu.int/rec/T-REC-H.222.0 "Generic coding of moving pictures and associated audio information: Systems"
 [RFC-2119]: https://tools.ietf.org/html/rfc2119 "Key words for use in RFCs"
